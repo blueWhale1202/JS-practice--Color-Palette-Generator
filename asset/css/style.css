@@ -1,7 +1,3 @@
-:root {
-    --num-palette-in-line: 6;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -18,89 +14,66 @@ body {
 }
 
 .palette-list {
-    margin: 32px 0;
+    margin: 20px;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    padding: 0 56px 0 32px;
+    justify-content: center;
 }
 
 .palette-item {
+    margin: 12px;
+    padding: 7px;
+    border-radius: 6px;
     background-color: #fff;
-    border-radius: 5px;
     box-shadow: 0 10px 25px rgb(52 87 220 / 8%);
     cursor: pointer;
-    padding: 7px;
-    margin: 7px;
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.1s ease;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.palette-item:active {
+    transform: scale(0.95);
 }
 
 .palette-item:hover {
-    opacity: 0.8;
-}
-
-.palette-item {
-    margin: 24px 0 0 24px;
+    filter: brightness(1.06);
 }
 
 .palette__color {
     width: 185px;
     height: 188px;
-    border-radius: 5px;
-    background-color: #276028;
-    flex-shrink: 0;
+    border-radius: 4px;
 }
 
 .palette__info {
-    padding: 12px 8px;
-    font-size: 1.8rem;
-    font-weight: 500;
+    margin: 14px 0 8px 0;
+    text-align: center;
     color: #444;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.84rem;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-.btn {
-    font-family: "Open Sans", sans-serif;
-    cursor: pointer;
-    padding: 13px 20px;
-    border-radius: 8px;
-    border: 4px solid #fff;
-    background-color: #8a6cff;
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.7rem;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+.refresh-btn {
     position: fixed;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+
+    padding: 13px 20px;
+    background-color: #8a6cff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 15px 30px rgb(52 87 220 / 20%);
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.76rem;
+    font-weight: 500;
+    color: #fff;
+
+    cursor: pointer;
 }
 
-.btn:hover {
+.refresh-btn:hover {
     background-color: #704dff;
-}
-
-@media screen and (max-width: 501px) {
-    .palette-list {
-        margin: 10px;
-    }
-
-    .palette-item {
-        margin: 8px;
-        padding: 5px;
-        width: calc(100% / 2 - 10px);
-    }
-    .palette__color {
-        width: 100%;
-        height: 148px;
-    }
-
-    .palette__info {
-        font-size: 1.5rem;
-    }
 }
